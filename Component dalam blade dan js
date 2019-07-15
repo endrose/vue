@@ -1,0 +1,22 @@
+v-html = mengembalikan nilai html
+v-text = mengembalikan nilai string 
+v-if = mengembalikan nilai kondisi if 
+       ex : blade = v-if='show'  
+            js =  var app1 = new Vue ({
+                      el:'#app1',
+                      data:{
+                              show:true,
+                              message:'Hello World!',
+                              
+                          }
+                  })
+v-else = mengembalikan nilai konfisi false 
+       ex : blade = v-else='show'  
+            js =  var app1 = new Vue ({
+                      el:'#app1',
+                      data:{
+                              show:false,
+                              message :'Hello World!',
+                              message2: 'Hello Vue'
+                          }
+                  })
