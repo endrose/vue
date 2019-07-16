@@ -1,0 +1,59 @@
+- computed  
+        Blade : {{ int1 }} {{ int2 }} 
+        EX : var app = new Vue({
+                  el:'#app',
+                  data: {
+                         message: 'Hello World!',
+                         result: null,
+                         int1: 1,
+                         int2: 2 
+                        },
+                  computed: {
+                              sum: function ()
+                              {
+                                  return this.result = this.int1 + this.int2;    
+                              }
+                          }
+                        });
+  Result : 3
+
+- methods 
+      Blade : v-on:click="sumProcess(2)"
+       EX : var app = new Vue({
+                  el:'#app',
+                  data: {
+                         message: 'Hello World!',
+                         result: null,
+                         int1: 1,
+                         int2: 2 
+                        },
+                  methods: {
+                              sumProcess: function (int3)
+                              {
+                                  return this.result = this.int1 + this.int2 + int3;    
+                              }
+                          }
+                        });
+ Result : 5
+
+- watch 
+        Blade : v-model="kilometers" v-model="meters"
+        EX : var app = new Vue({
+              el: '#app',
+              data: {
+                      kilometers: 0,
+                      meters: 0
+                    },
+             watch: {
+                      kilometers: function (val)
+                      {
+                          this.kilometers = val;
+                          this.meters = val * 1000;
+                      },
+                      meters: function (varl)
+                      {
+                          this.kilometers = val / 1000;
+                          this.meters = val;
+                      }
+                    }
+        });
