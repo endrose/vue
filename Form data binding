@@ -1,7 +1,7 @@
 v-html = mengembalikan nilai html
 v-text = mengembalikan nilai string 
 v-if = mengembalikan nilai kondisi if 
-       ex : blade = v-if='show'  
+       ex : blade = v-if="show"  {{ message }} result : Hello World
             js =  var app1 = new Vue ({
                       el:'#app1',
                       data:{
@@ -10,8 +10,9 @@ v-if = mengembalikan nilai kondisi if
                               
                           }
                   })
+                  
 v-else = mengembalikan nilai konfisi false 
-       ex : blade = v-else='show'  
+       ex : blade = v-else="show" {{ message }} result : Hello Vue
             js =  var app1 = new Vue ({
                       el:'#app1',
                       data:{
@@ -20,3 +21,12 @@ v-else = mengembalikan nilai konfisi false
                               message2: 'Hello Vue'
                           }
                   })
+                  
+v-for = mengembalikan nilai array checkbox
+      ex : blade = v-for="choice in checkbox" {{ choice }} result : yang dipilih di checkbox misal : traveling
+           js = var app2 = new Vue({
+                     el: '#app2',
+                     data: {
+                              checkbox: []
+                           }
+                });
