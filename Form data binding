@@ -30,3 +30,16 @@ v-for = mengembalikan nilai array checkbox
                               checkbox: []
                            }
                 });
+
+v-bind = directive binding mengubah atribut menjadi dinamis (v-bind:src , v-bind:href , v-bind:style )
+       ex : blade = v-bind:src="imgFile" result : gambar yang dimasukin di properties jsnya.
+                    v-bind:href="link" result : ke halaman google.
+                    v-bind:style="styleFont" result : font merah dengan ukuran 20px
+            js = var app3 = new Vue({
+                      el: '#app3',
+                      data: {
+                               imgFile: 'assets/img/blockchain.jpg',
+                               link: 'http://google.com',
+                               styleFont: 'color:red; font-size:20px;
+                            }
+                 });
