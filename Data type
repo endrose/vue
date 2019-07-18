@@ -1,22 +1,51 @@
-1. Array = menampilkan data dengan tipe array ex: [1 , 2, 3, 4, 5]
+1. Array = menampilkan data dengan tipe array ex: [Car, Motorcycle, Bike]
            Blade  :
                     <ul>
-                        <li v-for="angka in angkas">
-                            {{ angka }}
+                        <li v-for="vehicle in vehicles">
+                            {{ vehicle }}
                         </li>
                     <ul>
                     
-           Result : - 1
-                    - 2
-                    - 3
-                    - 4
-                    - 5
+                    with methods:
+                                 //tambah array
+                                 <label for="">Add vehicles</label><br>
+                                 <input type="text" v-model="content">
+                                 <button @click="addVehicles">Add</button>
+                                 
+                                 //hapus array
+                                 <ul>
+                                     <li v-for="(vehicle, index) in vehicles">
+                                        <button @click="removeVehicles">x</button>
+                                     </li>
+                                 </ul>
+                    
+                    
+           Result : - Car             Result methods(tambah) : - Car                 
+                    - Motorcycle                               - Motorcyle                                                                                                                                             
+                    - Bike                                     - Bike
+                    - Plane                                    - Plane
+                    
+                                                    (hapus)  : - Car
+                                                               - Motorcycle
+                                                               - Bike
+                                                               
+                                        
                     
            JS     : 
                     var app6 = new Vue({
                                           el: '#app6',
                                           data: {
-                                                  angkas: ['1','2','3','4','5']
-                                                }
+                                                  vehicles: ['Car','Motorcycle','Bile'],
+                                                  content: ''
+                                                },
+                                          methods: {
+                                                    addVehicles: function(){
+                                                       this.vehicles = this.vehicles.push(this.content);
+                                                       this.content = '';
+                                                    },
+                                                    removeVehicles: function (index){
+                                                       this.vehicles.splice(index, 1);
+                                                    }
+                                          }
                                       });
 2. Object
