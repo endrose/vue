@@ -1,0 +1,22 @@
+1. Array = menampilkan data dengan tipe array ex: [1 , 2, 3, 4, 5]
+           Blade  :
+                    <ul>
+                        <li v-for="angka in angkas">
+                            {{ angka }}
+                        </li>
+                    <ul>
+                    
+           Result : - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                    
+           JS     : 
+                    var app6 = new Vue({
+                                          el: '#app6',
+                                          data: {
+                                                  angkas: ['1','2','3','4','5']
+                                                }
+                                      });
+2. Object
