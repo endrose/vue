@@ -1,0 +1,59 @@
+Contoh dan masuk dari Even handler : menjalankan suatu even yang ditangkap dan dijalankan di javascript
+V-on directive
+ 1. v-on:click = ex : 
+                    Blade  = - <button v-on:click="message = 'This button has been clicked using v-on:click!' "> Clicked </button> 
+                                Result = This button has been clicked using v-on:click!
+                             - <button @click="message = 'This button has been clicked using @click=message! '"> Click Me!</button>
+                                Result = This button has been clicked using @click=message!
+                             - <button @click="showAlrt">Show Alert</button>
+   
+    NOTE : untuk semua button berbeda fungsi tapi untuk menampilkan tetap sama. button terakhir itu methods jadi jangan lupa didefinisikan.
+   
+                    JS     = var app4 = new Vue({
+                                          el: '#app4',
+                                          data: {
+                                                  message: ''
+                                                },
+                                          methods: {
+                                                      showAlert: function ()
+                                                      {
+                                                        alert('This button has been clicked using function to call alert');
+                                                      }
+                                                   }
+                                        });
+                                        
+ 2. v-on:keyup = ex :
+                    Blade =  - <input type="text" v-on:keyUp.enter= "Your pressing enter key">
+                                result : Your pressing enter key
+                                
+                             - <input type="text" 
+                                                @keyup.esc = "escKey"
+                                                @keyup.space = "spaceKey
+                                                @keyup.up = "upKey"
+                                                @keyup.down = "downKey"
+                                                @keyup.65 = "aKey"
+                               >
+                               result : Your pressing space key atau esckey, upkey, downkey, akey
+                               
+                     JS    =  var app5 = new Vue({
+                                el: '#app5',
+                                data: {
+                                        message: ''
+                                      },
+                                methods:{
+                                         escKey: function () {
+                                              this.message = 'You pressing enter key'
+                                         },
+                                         spaceKey: function () {
+                                              this.message = 'Your pressing space key'
+                                          },
+                                          upKey: function (){
+                                              this.message = 'Your pressing up key'
+                                          },
+                                          downKey: function () {
+                                              this.message = 'YOur pressing up key
+                                          },
+                                          aKey: function () {
+                                              this.message = "You pressing 'a' key"
+                                          }
+                                    });
