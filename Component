@@ -1,0 +1,25 @@
+- Blade  :
+          <div id="app8">
+              <greeting><greeting>
+         </div>
+         
+- Result : - Hello, Vue
+           - Hello, Vue (miring)
+           - Hello, Vue (garis bawah)
+           
+- JS     :
+          Vue.component('greeting', {
+             `<div>
+                  <b>Hello, Vue</b>
+                  <i>Hello, Vue</i>
+                  <u>Hello, Vue</u>
+              </div>
+             ` 
+          });
+          var app8 = new Vue({
+              el: '#app8'  
+          });
+         
+         
+         
+         
