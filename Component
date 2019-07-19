@@ -1,25 +1,44 @@
-- Blade  :
-          <div id="app8">
-              <greeting><greeting>
-         </div>
+
+          - Blade  :
+                    <div id="app8">
+                            <greeting><greeting>
+                    </div>
+
+          - Result : - Hello, Vue
+                     - Hello, Vue (miring)
+                     - Hello, Vue (garis bawah)
+                     
+          - Result : tombol hitung (di pencek tombonya ngitung) 
+
+          - JS     :
+  1. Component
+                    Vue.component('greeting', {
+                                         `<div>
+                                                  <b>Hello, Vue</b>
+                                                  <i>Hello, Vue</i>
+                                                  <u>Hello, Vue</u>
+                                        </div>
+                                          ` 
+                                    });
+                                    
+  2. Properties in component                                  
+                    Vue.component('button-counter', {
+                           data: function () {
+                                       return: {
+                                                   count: 0
+                                               }
+                                   },
+                            template: '<button v-on:click="count++">Clicked Me! {{ count }} times</button>'
+                                   
+                    });
          
-- Result : - Hello, Vue
-           - Hello, Vue (miring)
-           - Hello, Vue (garis bawah)
-           
-- JS     :
-          Vue.component('greeting', {
-             `<div>
-                  <b>Hello, Vue</b>
-                  <i>Hello, Vue</i>
-                  <u>Hello, Vue</u>
-              </div>
-             ` 
-          });
-          var app8 = new Vue({
-              el: '#app8'  
-          });
-         
+                    var app8 = new Vue({
+                    el: '#app8'  
+                    });
+
+
+
+
          
          
          
