@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction</title>
+	<link rel="icon" href="assets/icon/vue.png">
+</head>
+<body>
+	<div id="app">
+		<h3>REVERSE</h3>
+		<textarea type="text" v-model="message" placeholder="Edit me.." cols="30" rows="8"></textarea> 
+		<p style="white-space: pre-line;">Message is : {{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+	<br>
+	<hr>
+	<div id="app1">
+		<p v-if="show">{{ message }}</p>
+		<p v-else="show">{{ message2 }}</p>
+		<br>
+		<p>Result from {{ int1 }} + {{ int2 }} is {{ result }}</p>
+		<button v-on:click="sumProcess(2)">Process</button>
+		<input type="text" v-model="kilometers">
+		<input type="text" v-model="meters">
+	</div>
+	<br>
+	<hr>
+
+	<div id="app2">
+		<input type="text" v-model="message" placeholder="input text...">
+		{{ message }}
+		<br>
+		<textarea cols="30" rows="5" v-model="textarea">
+			
+		</textarea>
+		<br>
+		<p style="white-space: pre-line;">{{ textarea }}</p>
+		<br>
+		<input type="radio" v-model="radiobutton" value="option1"> Option 1
+		<br>
+		<input type="radio" v-model="radiobutton" value="option2"> Option 2
+		<br>
+		<p>Your choice is : {{ radiobutton }}</p>
+		<br>
+		<label for="">Watching Movies</label>
+		<input type="checkbox" value="watching-movies" v-model="checkbox">
+		<br>
+		<label for="">Traveling</label>
+		<input type="checkbox" value="traveling" v-model="checkbox">
+		<br>
+		<label for="">Music</label>
+		<input type="checkbox" value="music" v-model="checkbox">
+		<br>
+		My hobbies are : {{ checkbox }}
+		<br>
+		<ul>
+			<li v-for="choice in checkbox">{{ choice }}</li>
+		</ul>
+		<br>
+		<select v-model="select" multiple>
+			<option value="" disabled>Choice programming language</option>
+			<option value="javascript">JavaScript</option>
+			<option value="java">Java</option>
+			<option value="php">Php</option>
+		</select>
+		<br>
+		Your favorite program is : {{ select }}
+		<br>
+		<ul>
+			<li v-for="sel in select">{{ sel }}</li>
+		</ul>
+	</div>
+	<hr>
+	<div id="app3">
+		<img v-bind:src="imgFile" width="500px" height="500px">
+		<br>
+		<a v-bind:href="link">About page</a>
+		<br>
+		<p v-bind:style="styleFont">Green font</p>
+	</div>
+	<hr>
+	<div id="app4">
+		<button v-on:click="message= 'This button has been clicked v-on:click!' ">Clicked</button>
+		<button @click="message = 'This button has been clicked @click=message' ">Click Me!</button>
+		<button @click="showAlert">Show Alert</button>
+		<br>
+		{{message}}
+	</div>
+	<hr>	
+	<br>
+	<div id="app5">
+		<label for="">Press any key</label>
+		<input type="text" v-on:keyup.enter=" message = 'Your pressing enter key'">
+		
+		<br>
+		<label for="">Press any key</label>
+		<input type="text"
+			  @keyup.esc="escKey"
+			  @keyup.space="spaceKey"
+			  @keyup.up="upKey"
+			  @keyup.down="downKey"
+			  @keyup.65="aKey"
+		>	
+		<br>
+		{{message}}
+	</div>
+	<br>
+	<hr>
+	<div id="app6">
+		<ul>
+			<li>{{vehicles[0]}}</li>
+		</ul>
+		<br>
+		<ul>
+			<li v-for="vehicle in vehicles">
+				{{ vehicle }}
+			</li>
+		</ul>
+		<br>
+		<label for="">Add Vehicles</label><br>
+		<input type="text" v-model="content">
+		<button @click="addVehicles">Add</button>
+		<br>
+		<ul>
+			<li v-for="(vehicle, index) in vehicles">
+				<button @click="removeVehicles">x</button>
+				{{ vehicle }}
+
+			</li>
+				
+
+		</ul>
+	</div>
+
+	<hr>
+	<div id="app7">
+		<ul>
+			<li v-for="vehicle in vehicles">
+				Type :{{ vehicle.type }}
+				Brand :{{ vehicle.brand }}
+				Color :{{ vehicle.color }}
+
+			</li>
+		</ul>
+		<br>	
+		<ul>	
+			<li v-for="value in object">
+					{{ value }}	
+			</li>
+		</ul>
+	</div>
+	<hr>
+	<div id="app8">
+		<greeting></greeting><br>
+		<button-counter></button-counter>
+	</div>
+</body>
+<script type="text/javascript" src="assets/vendor/vue.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+</html>
