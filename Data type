@@ -48,4 +48,46 @@
                                                     }
                                           }
                                       });
-2. Object
+2. Object = menampilkan data dengan tipe objek ex : object { firsName: 'Jhon', lastName='Doe',age=30}
+            Blade  : 
+                    <ul>
+                        <li v-for="value in object">
+                             {{ value }}
+                        </li>         
+                    </ul>
+                    
+                    <br>
+                    
+                    <ul>
+                        <li v-for="vehicle in vehicles">
+                             Type : {{ vehicle.type }}
+                             Brand: {{ vehicle.brand }}
+                             Color: {{ vehicle.color }}
+                        </li>
+                    </ul>
+                    
+                 
+                    
+            Result : - Jhon      Result : - Type: Car, Brand: Toyota, Color: Metallic Silver
+                     - Doe                - Type: Motorcycle, Brand: Honda, Color: Red
+                     - 30                 - Type: Bike, Brand: BMX, Color: Black
+                     
+            JS     :
+                     var app7 = new Vue({
+                           el: '#app7',
+                           data: {
+                                    object: {
+                                               firstName: 'Jhon',
+                                               lastName: 'Doe',
+                                               age: 30
+                                            },
+                                     vehicles: [
+                                                 { type: 'Car', brand: 'Toyota', color: 'Metallic Silver'},
+                                                 { type: 'Motorcycle', brand: 'Honda', color: 'Red'},
+                                                 { type: 'Bike', brand: 'BMX', color: 'Blade'}
+                                                 
+                                     ]
+                                 }
+                         
+                     });
+                     
