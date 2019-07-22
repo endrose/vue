@@ -3,10 +3,18 @@
                     <div id="app8">
                             <greeting><greeting>
                     </div>
+                    <hr>
+                    <div>
+                          <blog-post v-for="post in posts" :key="post.id" :post="post"></blog-post>
+                    </div>
+                 
 
-          - Result : - Hello, Vue
-                     - Hello, Vue (miring)
-                     - Hello, Vue (garis bawah)
+          - Result : - Hello, Vue                                 - My Journey with Vue
+                                                                     This content of Post 1                                              
+                     - Hello, Vue (miring)                        - Blogging with Vue
+                                                                     This content of Post 2
+                     - Hello, Vue (garis bawah)                   - Why Vue is so fun
+                                                                     This content of Post 3
                      
           - Result : tombol hitung (di pencek tombonya ngitung) 
 
@@ -21,20 +29,43 @@
                                           ` 
                                     });
                                     
-  2. Properties in component                                  
-                    Vue.component('button-counter', {
-                           data: function () {
-                                       return: {
-                                                   count: 0
-                                               }
-                                   },
-                            template: '<button v-on:click="count++">Clicked Me! {{ count }} times</button>'
-                                   
-                    });
-         
+  2. Properties in component 
+                     Vue.component('button-counter', {
+                                               data: function () {
+                                                           return: {
+                                                                       count: 0
+                                                                   }
+                                                       },
+                                                template: '<button v-on:click="count++">Clicked Me! {{ count }} times</button>'
+
+                                        });
+
                     var app8 = new Vue({
                     el: '#app8'  
                     });
+                    
+  3. Props property
+                    Vue.component('blog-post', {
+                        props: ['post'],
+                        template: `
+                                        <div>
+                                             <h3>{{ post.title }}</h3>
+                                             <div v-html="post.content"></div>
+                                        </div>
+                                  `
+                    });
+                    var app9 = new Vue({
+                        el: '#app9',
+                        data: {
+                                 posts: [
+                                           { id: "1", title: "My Journey with Vue", content:"This content of <b>Post 1</b>" },
+                                           { id: "2", title: "My Journey with Vue", content:"This content of <b>Post 2</b>" },
+                                           { id: "3", title: "My Journey with Vue", content:"This content of <b>Post 3</b>" }
+                                           
+                                        ]
+                              }
+                    });
+                    
 
 
 
